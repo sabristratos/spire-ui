@@ -269,37 +269,37 @@ function handleBlur(event: FocusEvent) {
 }
 
 .ui-input-wrapper--xs {
-  height: 1.75rem;
-  padding: 0 var(--space-2);
+  height: var(--input-height-xs);
+  padding: 0 var(--space-1);
   font-size: var(--text-xs);
   border-radius: var(--radius-sm);
 }
 
 .ui-input-wrapper--sm {
-  height: 2rem;
-  padding: 0 var(--space-3);
+  height: var(--input-height-sm);
+  padding: 0 var(--space-2);
   font-size: var(--text-sm);
   border-radius: var(--radius-md);
 }
 
 .ui-input-wrapper--md {
-  height: 2.25rem;
+  height: var(--input-height-md);
   padding: 0 var(--space-3);
   font-size: var(--text-sm);
   border-radius: var(--radius-md);
 }
 
 .ui-input-wrapper--lg {
-  height: 2.5rem;
-  padding: 0 var(--space-4);
-  font-size: var(--text-md);
+  height: var(--input-height-lg);
+  padding: 0 var(--space-3);
+  font-size: var(--text-base);
   border-radius: var(--radius-md);
 }
 
 .ui-input-wrapper--xl {
-  height: 2.75rem;
+  height: var(--input-height-xl);
   padding: 0 var(--space-4);
-  font-size: var(--text-md);
+  font-size: var(--text-base);
   border-radius: var(--radius-lg);
 }
 

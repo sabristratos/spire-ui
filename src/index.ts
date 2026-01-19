@@ -94,6 +94,9 @@ export type {
   ColumnAlign
 } from './components/DataTable'
 
+export { DatePicker } from './components/DatePicker'
+export type { DatePickerProps, ViewMode as DatePickerViewMode } from './components/DatePicker'
+
 export { Drawer } from './components/Drawer'
 export type {
   DrawerProps,
@@ -166,6 +169,22 @@ export type { SegmentedControlProps, SegmentedOption } from './components/Segmen
 export { Select } from './components/Select'
 export type { SelectProps, SelectOption } from './components/Select'
 
+export {
+  SidebarLayout,
+  SidebarRoot,
+  SidebarItem,
+  SidebarGroup
+} from './components/Sidebar'
+export type {
+  SidebarLayoutProps,
+  SidebarRootProps,
+  SidebarItemProps,
+  SidebarGroupProps,
+  SidebarContext,
+  SidebarGroupContext
+} from './components/Sidebar'
+export { SidebarKey, SidebarGroupKey } from './components/Sidebar'
+
 export { Skeleton } from './components/Skeleton'
 export type { SkeletonProps, SkeletonVariant } from './components/Skeleton'
 
@@ -195,6 +214,9 @@ export type { TextareaProps } from './components/Textarea'
 export { Text } from './components/Text'
 export type { TextProps } from './components/Text'
 
+export { TimePicker } from './components/TimePicker'
+export type { TimePickerProps } from './components/TimePicker'
+
 export { ToggleButton } from './components/ToggleButton'
 export type { ToggleButtonProps } from './components/ToggleButton'
 
@@ -222,6 +244,34 @@ export { useStagger, getStaggerStyle, type UseStaggerOptions, type UseStaggerRet
 
 // Utilities
 export { getInitials, getNestedValue } from './utils'
+export {
+  generateCalendarGrid,
+  getDaysInMonth,
+  formatDate,
+  parseDate,
+  isSameDate,
+  isDateBefore,
+  isDateAfter,
+  getMonthName,
+  getMonthNamesShort,
+  getWeekdayNames,
+  isDateInRange,
+  isDateBetween,
+  getRangeClass,
+  normalizeRange,
+  generateYearGrid,
+  getPresetRange
+} from './utils'
+export type { CalendarDay, RangeState, RangeClass } from './utils'
+export {
+  parseTime,
+  formatTime,
+  generateRange,
+  to12Hour,
+  to24Hour,
+  isValidTimeString
+} from './utils/time'
+export type { ParsedTime, TimeFormat } from './utils/time'
 
 // Configuration
 export { configureIcons, resetIcons, type IconMap } from './config/icons'

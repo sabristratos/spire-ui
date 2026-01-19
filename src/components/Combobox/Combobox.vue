@@ -656,22 +656,34 @@ onBeforeUnmount(() => {
   flex-wrap: nowrap;
 }
 
+.ui-combobox__trigger--xs {
+  min-height: var(--input-height-xs);
+  padding: 0 var(--space-1);
+  font-size: var(--text-xs);
+}
+
 .ui-combobox__trigger--sm {
-  min-height: 2rem;
+  min-height: var(--input-height-sm);
   padding: var(--space-1) var(--space-2);
   font-size: var(--text-sm);
 }
 
 .ui-combobox__trigger--md {
-  min-height: 2.25rem;
+  min-height: var(--input-height-md);
   padding: var(--space-1) var(--space-3);
   font-size: var(--text-sm);
 }
 
 .ui-combobox__trigger--lg {
-  min-height: 2.5rem;
+  min-height: var(--input-height-lg);
+  padding: var(--space-1) var(--space-3);
+  font-size: var(--text-base);
+}
+
+.ui-combobox__trigger--xl {
+  min-height: var(--input-height-xl);
   padding: var(--space-1) var(--space-4);
-  font-size: var(--text-md);
+  font-size: var(--text-base);
 }
 
 .ui-combobox__trigger:hover:not(.ui-combobox--disabled .ui-combobox__trigger) {

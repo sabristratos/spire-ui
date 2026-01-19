@@ -157,45 +157,45 @@ const iconSize = computed(() => iconSizeMap[props.size])
 }
 
 .ui-button--xs {
-  height: 1.75rem;
-  padding: 0 var(--space-2);
+  height: var(--input-height-xs);
+  padding: 0 var(--space-1);
   font-size: var(--text-xs);
   border-radius: var(--radius-sm);
 }
 
 .ui-button--sm {
-  height: 2rem;
-  padding: 0 var(--space-3);
+  height: var(--input-height-sm);
+  padding: 0 var(--space-2);
   font-size: var(--text-sm);
   border-radius: var(--radius-md);
 }
 
 .ui-button--md {
-  height: 2.25rem;
-  padding: 0 var(--space-4);
+  height: var(--input-height-md);
+  padding: 0 var(--space-3);
   font-size: var(--text-sm);
   border-radius: var(--radius-md);
 }
 
 .ui-button--lg {
-  height: 2.5rem;
-  padding: 0 var(--space-5);
+  height: var(--input-height-lg);
+  padding: 0 var(--space-4);
   font-size: var(--text-base);
   border-radius: var(--radius-md);
 }
 
 .ui-button--xl {
-  height: 2.75rem;
-  padding: 0 var(--space-6);
+  height: var(--input-height-xl);
+  padding: 0 var(--space-5);
   font-size: var(--text-base);
   border-radius: var(--radius-lg);
 }
 
-.ui-button--icon-only.ui-button--xs { width: 1.75rem; padding: 0; }
-.ui-button--icon-only.ui-button--sm { width: 2rem; padding: 0; }
-.ui-button--icon-only.ui-button--md { width: 2.25rem; padding: 0; }
-.ui-button--icon-only.ui-button--lg { width: 2.5rem; padding: 0; }
-.ui-button--icon-only.ui-button--xl { width: 2.75rem; padding: 0; }
+.ui-button--icon-only.ui-button--xs { width: var(--input-height-xs); padding: 0; }
+.ui-button--icon-only.ui-button--sm { width: var(--input-height-sm); padding: 0; }
+.ui-button--icon-only.ui-button--md { width: var(--input-height-md); padding: 0; }
+.ui-button--icon-only.ui-button--lg { width: var(--input-height-lg); padding: 0; }
+.ui-button--icon-only.ui-button--xl { width: var(--input-height-xl); padding: 0; }
 
 .ui-button--primary {
   background-color: var(--action-primary);

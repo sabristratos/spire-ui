@@ -492,33 +492,33 @@ onBeforeUnmount(() => {
 }
 
 .ui-select__trigger--xs {
-  height: 1.75rem;
-  padding: 0 var(--space-2);
+  height: var(--input-height-xs);
+  padding: 0 var(--space-1);
   font-size: var(--text-xs);
 }
 
 .ui-select__trigger--sm {
-  height: 2rem;
-  padding: 0 var(--space-3);
+  height: var(--input-height-sm);
+  padding: 0 var(--space-2);
   font-size: var(--text-sm);
 }
 
 .ui-select__trigger--md {
-  height: 2.25rem;
+  height: var(--input-height-md);
   padding: 0 var(--space-3);
   font-size: var(--text-sm);
 }
 
 .ui-select__trigger--lg {
-  height: 2.5rem;
-  padding: 0 var(--space-4);
-  font-size: var(--text-md);
+  height: var(--input-height-lg);
+  padding: 0 var(--space-3);
+  font-size: var(--text-base);
 }
 
 .ui-select__trigger--xl {
-  height: 2.75rem;
+  height: var(--input-height-xl);
   padding: 0 var(--space-4);
-  font-size: var(--text-md);
+  font-size: var(--text-base);
 }
 
 .ui-select__trigger:hover:not(:disabled) {
