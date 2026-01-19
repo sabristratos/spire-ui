@@ -1,0 +1,82 @@
+{
+  "name": "spire-ui",
+  "version": "0.0.1",
+  "description": "A dependency-free Vue 3 component library built with pure CSS and OKLCH colors",
+  "type": "module",
+  "license": "MIT",
+  "author": "Sabri Stratos",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sabristratos/spire-ui.git"
+  },
+  "homepage": "https://github.com/sabristratos/spire-ui#readme",
+  "bugs": {
+    "url": "https://github.com/sabristratos/spire-ui/issues"
+  },
+  "keywords": [
+    "vue",
+    "vue3",
+    "components",
+    "ui",
+    "component-library",
+    "design-system",
+    "typescript",
+    "oklch",
+    "css"
+  ],
+  "files": [
+    "dist",
+    "src"
+  ],
+  "main": "./src/index.ts",
+  "module": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": {
+      "import": "./src/index.ts",
+      "types": "./src/index.ts"
+    },
+    "./style.css": "./src/styles/main.css",
+    "./src/*": "./src/*"
+  },
+  "publishConfig": {
+    "main": "./dist/spire-ui.umd.js",
+    "module": "./dist/spire-ui.es.js",
+    "types": "./dist/index.d.ts",
+    "exports": {
+      ".": {
+        "import": "./dist/spire-ui.es.js",
+        "require": "./dist/spire-ui.umd.js",
+        "types": "./dist/index.d.ts"
+      },
+      "./style.css": "./dist/spire-ui.css"
+    }
+  },
+  "scripts": {
+    "build": "vite build",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "vue-tsc --noEmit"
+  },
+  "peerDependencies": {
+    "chart.js": "^4.4.0",
+    "vue": "^3.3.0"
+  },
+  "peerDependenciesMeta": {
+    "chart.js": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.2.1",
+    "@vue/test-utils": "^2.4.6",
+    "chart.js": "^4.5.1",
+    "happy-dom": "^20.3.0",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.7",
+    "vite-plugin-dts": "^4.4.0",
+    "vitest": "^4.0.17",
+    "vue": "^3.5.13",
+    "vue-tsc": "^2.2.0"
+  }
+}

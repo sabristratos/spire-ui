@@ -1,0 +1,159 @@
+/**
+ * Motion System - Animation Personality Configuration
+ *
+ * Controls animation duration, easing, and character via data-motion attribute.
+ * All motion presets are opt-in; default behavior (smooth) requires no attribute.
+ *
+ * Usage:
+ *   <html data-motion="spring">
+ *   <div data-motion="snappy">...</div>
+ */
+
+:root {
+  --motion-duration-scale: 1;
+  --motion-bounce: 0;
+  --motion-stagger: 50ms;
+
+  --motion-ease-default: cubic-bezier(0.4, 0, 0.2, 1);
+  --motion-ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --motion-ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --motion-ease-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --motion-ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/**
+ * Minimal
+ * Fast, barely-there animations. For users who prefer reduced motion.
+ */
+[data-motion='minimal'] {
+  --motion-duration-scale: 0.5;
+  --motion-bounce: 0;
+  --motion-stagger: 25ms;
+
+  --motion-ease-default: linear;
+  --motion-ease-in: linear;
+  --motion-ease-out: linear;
+  --motion-ease-expo: linear;
+  --motion-ease-bounce: linear;
+
+  --duration-fast: 75ms;
+  --duration-normal: 100ms;
+  --duration-slow: 150ms;
+
+  --ease-default: linear;
+  --ease-in: linear;
+  --ease-out: linear;
+  --ease-out-expo: linear;
+  --ease-out-back: linear;
+}
+
+/**
+ * Smooth (Default)
+ * Professional, standard animations. Current default.
+ */
+[data-motion='smooth'] {
+  --motion-duration-scale: 1;
+  --motion-bounce: 0;
+  --motion-stagger: 50ms;
+
+  --motion-ease-default: cubic-bezier(0.4, 0, 0.2, 1);
+  --motion-ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --motion-ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --motion-ease-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --motion-ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  --duration-fast: 150ms;
+  --duration-normal: 200ms;
+  --duration-slow: 300ms;
+
+  --ease-default: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-back: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/**
+ * Spring
+ * Bouncy, playful animations with overshoot.
+ */
+[data-motion='spring'] {
+  --motion-duration-scale: 1.2;
+  --motion-bounce: 0.15;
+  --motion-stagger: 60ms;
+
+  --motion-ease-default: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --motion-ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --motion-ease-out: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --motion-ease-expo: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --motion-ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+  --duration-fast: 180ms;
+  --duration-normal: 240ms;
+  --duration-slow: 360ms;
+
+  --ease-default: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --ease-out: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-out-expo: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --ease-out-back: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/**
+ * Snappy
+ * Quick, responsive animations with fast attack.
+ */
+[data-motion='snappy'] {
+  --motion-duration-scale: 0.7;
+  --motion-bounce: 0;
+  --motion-stagger: 35ms;
+
+  --motion-ease-default: cubic-bezier(0.16, 1, 0.3, 1);
+  --motion-ease-in: cubic-bezier(0.55, 0, 1, 0.45);
+  --motion-ease-out: cubic-bezier(0, 0.55, 0.45, 1);
+  --motion-ease-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --motion-ease-bounce: cubic-bezier(0.22, 1.35, 0.36, 1);
+
+  --duration-fast: 100ms;
+  --duration-normal: 140ms;
+  --duration-slow: 210ms;
+
+  --ease-default: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in: cubic-bezier(0.55, 0, 1, 0.45);
+  --ease-out: cubic-bezier(0, 0.55, 0.45, 1);
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-back: cubic-bezier(0.22, 1.35, 0.36, 1);
+}
+
+/**
+ * Reduced Motion Support
+ * Respects user's system preference for reduced motion.
+ * Overrides all motion presets to ensure accessibility.
+ */
+@media (prefers-reduced-motion: reduce) {
+  :root,
+  [data-motion='minimal'],
+  [data-motion='smooth'],
+  [data-motion='spring'],
+  [data-motion='snappy'] {
+    --motion-duration-scale: 0.01;
+    --motion-bounce: 0;
+    --motion-stagger: 0ms;
+
+    --motion-ease-default: linear;
+    --motion-ease-in: linear;
+    --motion-ease-out: linear;
+    --motion-ease-expo: linear;
+    --motion-ease-bounce: linear;
+
+    --duration-fast: 1ms;
+    --duration-normal: 1ms;
+    --duration-slow: 1ms;
+
+    --ease-default: linear;
+    --ease-in: linear;
+    --ease-out: linear;
+    --ease-out-expo: linear;
+    --ease-out-back: linear;
+  }
+}

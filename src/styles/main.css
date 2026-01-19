@@ -1,0 +1,24 @@
+/* Main CSS Entry Point - Import order matters */
+
+@import './tokens.css';
+@import './theme.css';
+@import './mood.css';
+@import './depth.css';
+@import './motion.css';
+@import './effects.css';
+@import './reset.css';
+
+/* Utility: Avatar Group (overlapping avatars) */
+.ui-avatar-group {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+
+.ui-avatar-group > * {
+  margin-left: -0.5rem;
+}
+
+.ui-avatar-group > *:last-child {
+  margin-left: 0;
+}

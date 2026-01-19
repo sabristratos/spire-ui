@@ -1,0 +1,258 @@
+/**
+ * Mood System - Color Personality Configuration
+ *
+ * Controls color temperature, saturation, and hue shifts via data-mood attribute.
+ * All moods are opt-in; default behavior (warm) requires no attribute.
+ *
+ * Each mood defines:
+ * 1. --color-primary-* palette (the mood's accent color)
+ * 2. Component tokens that reference --color-primary-* (must be defined here
+ *    so var() resolves in the mood context, not at :root)
+ *
+ * Usage:
+ *   <html data-mood="vibrant">
+ *   <div data-mood="cool">...</div>
+ */
+
+:root {
+  --mood-chroma-scale: 1;
+  --mood-warmth: 60;
+  --mood-hue-shift: 0;
+}
+
+/**
+ * Warm (Default)
+ * Current warm stone/indigo palette. Primary = Indigo (hue 275)
+ */
+[data-mood='warm'] {
+  --mood-chroma-scale: 1;
+  --mood-warmth: 60;
+  --mood-hue-shift: 0;
+
+  /* Canvas background */
+  --bg-primary: oklch(0.995 0.003 60);
+
+  /* Primary color = Indigo */
+  --color-primary-50: oklch(0.962 0.018 275);
+  --color-primary-100: oklch(0.930 0.034 275);
+  --color-primary-200: oklch(0.870 0.065 275);
+  --color-primary-300: oklch(0.785 0.115 275);
+  --color-primary-400: oklch(0.673 0.182 275);
+  --color-primary-500: oklch(0.585 0.233 275);
+  --color-primary-600: oklch(0.511 0.262 275);
+  --color-primary-700: oklch(0.457 0.240 275);
+  --color-primary-800: oklch(0.398 0.195 275);
+  --color-primary-900: oklch(0.359 0.144 275);
+
+  /* Component tokens - resolved in mood context */
+  --action-primary: var(--color-primary-600);
+  --action-primary-hover: var(--color-primary-700);
+  --action-primary-active: var(--color-primary-800);
+  --ring-color: var(--color-primary-500);
+  --border-focus: var(--color-primary-500);
+  --checkbox-checked-bg: var(--color-primary-600);
+  --checkbox-checked-hover: var(--color-primary-700);
+  --switch-track-on: var(--color-primary-600);
+  --radio-checked: var(--color-primary-600);
+  --radio-checked-hover: var(--color-primary-700);
+}
+
+/**
+ * Cool
+ * Blue-gray undertones, professional and calm. Primary = Deep Blue (hue 250)
+ */
+[data-mood='cool'] {
+  --mood-chroma-scale: 0.9;
+  --mood-warmth: 240;
+  --mood-hue-shift: -15;
+
+  /* Canvas background - cool blue tint */
+  --bg-primary: oklch(0.995 0.004 240);
+
+  /* Neutral palette - blue-gray undertones */
+  --color-stone-50: oklch(0.985 0.008 240);
+  --color-stone-100: oklch(0.970 0.012 240);
+  --color-stone-200: oklch(0.923 0.016 240);
+  --color-stone-300: oklch(0.865 0.022 240);
+  --color-stone-400: oklch(0.706 0.032 240);
+  --color-stone-500: oklch(0.553 0.032 240);
+  --color-stone-600: oklch(0.444 0.030 240);
+  --color-stone-700: oklch(0.374 0.028 240);
+  --color-stone-800: oklch(0.268 0.025 240);
+  --color-stone-900: oklch(0.216 0.022 240);
+  --color-stone-950: oklch(0.147 0.020 240);
+
+  /* Primary color = Deep Blue */
+  --color-primary-50: oklch(0.970 0.020 250);
+  --color-primary-100: oklch(0.940 0.040 250);
+  --color-primary-200: oklch(0.880 0.080 250);
+  --color-primary-300: oklch(0.790 0.140 250);
+  --color-primary-400: oklch(0.680 0.190 250);
+  --color-primary-500: oklch(0.585 0.220 250);
+  --color-primary-600: oklch(0.511 0.240 250);
+  --color-primary-700: oklch(0.457 0.220 250);
+  --color-primary-800: oklch(0.400 0.200 250);
+  --color-primary-900: oklch(0.350 0.150 250);
+
+  /* Component tokens - resolved in mood context */
+  --action-primary: var(--color-primary-600);
+  --action-primary-hover: var(--color-primary-700);
+  --action-primary-active: var(--color-primary-800);
+  --ring-color: var(--color-primary-500);
+  --border-focus: var(--color-primary-500);
+  --checkbox-checked-bg: var(--color-primary-600);
+  --checkbox-checked-hover: var(--color-primary-700);
+  --switch-track-on: var(--color-primary-600);
+  --radio-checked: var(--color-primary-600);
+  --radio-checked-hover: var(--color-primary-700);
+}
+
+/**
+ * Vibrant
+ * Higher saturation, energetic and bold. Primary = Violet-Purple (hue 295)
+ */
+[data-mood='vibrant'] {
+  --mood-chroma-scale: 1.25;
+  --mood-warmth: 55;
+  --mood-hue-shift: 5;
+
+  /* Canvas background - slightly warmer with more chroma */
+  --bg-primary: oklch(0.995 0.005 55);
+
+  /* Neutral palette - slightly more saturated */
+  --color-stone-50: oklch(0.985 0.008 55);
+  --color-stone-100: oklch(0.970 0.012 55);
+  --color-stone-200: oklch(0.923 0.016 55);
+  --color-stone-300: oklch(0.865 0.024 55);
+  --color-stone-400: oklch(0.706 0.038 55);
+  --color-stone-500: oklch(0.553 0.038 55);
+  --color-stone-600: oklch(0.444 0.035 55);
+  --color-stone-700: oklch(0.374 0.032 55);
+  --color-stone-800: oklch(0.268 0.028 55);
+  --color-stone-900: oklch(0.216 0.025 55);
+  --color-stone-950: oklch(0.147 0.022 55);
+
+  /* Primary color = Violet-Purple (high chroma) */
+  --color-primary-50: oklch(0.970 0.030 295);
+  --color-primary-100: oklch(0.940 0.060 295);
+  --color-primary-200: oklch(0.880 0.120 295);
+  --color-primary-300: oklch(0.790 0.200 295);
+  --color-primary-400: oklch(0.700 0.260 295);
+  --color-primary-500: oklch(0.620 0.280 295);
+  --color-primary-600: oklch(0.550 0.300 295);
+  --color-primary-700: oklch(0.490 0.280 295);
+  --color-primary-800: oklch(0.430 0.260 295);
+  --color-primary-900: oklch(0.370 0.200 295);
+
+  /* Component tokens - resolved in mood context */
+  --action-primary: var(--color-primary-600);
+  --action-primary-hover: var(--color-primary-700);
+  --action-primary-active: var(--color-primary-800);
+  --ring-color: var(--color-primary-500);
+  --border-focus: var(--color-primary-500);
+  --checkbox-checked-bg: var(--color-primary-600);
+  --checkbox-checked-hover: var(--color-primary-700);
+  --switch-track-on: var(--color-primary-600);
+  --radio-checked: var(--color-primary-600);
+  --radio-checked-hover: var(--color-primary-700);
+}
+
+/**
+ * Muted
+ * Desaturated, calm and subtle. Primary = Soft Purple (hue 270, low chroma)
+ */
+[data-mood='muted'] {
+  --mood-chroma-scale: 0.7;
+  --mood-warmth: 60;
+  --mood-hue-shift: 0;
+
+  /* Canvas background - very low chroma, almost neutral */
+  --bg-primary: oklch(0.995 0.001 60);
+
+  /* Neutral palette - desaturated */
+  --color-stone-50: oklch(0.985 0.003 60);
+  --color-stone-100: oklch(0.970 0.005 60);
+  --color-stone-200: oklch(0.923 0.007 60);
+  --color-stone-300: oklch(0.865 0.011 60);
+  --color-stone-400: oklch(0.706 0.015 60);
+  --color-stone-500: oklch(0.553 0.015 60);
+  --color-stone-600: oklch(0.444 0.014 60);
+  --color-stone-700: oklch(0.374 0.012 60);
+  --color-stone-800: oklch(0.268 0.010 60);
+  --color-stone-900: oklch(0.216 0.009 60);
+  --color-stone-950: oklch(0.147 0.008 60);
+
+  /* Primary color = Soft Purple (low chroma) */
+  --color-primary-50: oklch(0.965 0.012 270);
+  --color-primary-100: oklch(0.935 0.025 270);
+  --color-primary-200: oklch(0.875 0.050 270);
+  --color-primary-300: oklch(0.790 0.085 270);
+  --color-primary-400: oklch(0.680 0.110 270);
+  --color-primary-500: oklch(0.550 0.120 270);
+  --color-primary-600: oklch(0.480 0.140 270);
+  --color-primary-700: oklch(0.420 0.130 270);
+  --color-primary-800: oklch(0.360 0.115 270);
+  --color-primary-900: oklch(0.310 0.090 270);
+
+  /* Component tokens - resolved in mood context */
+  --action-primary: var(--color-primary-600);
+  --action-primary-hover: var(--color-primary-700);
+  --action-primary-active: var(--color-primary-800);
+  --ring-color: var(--color-primary-500);
+  --border-focus: var(--color-primary-500);
+  --checkbox-checked-bg: var(--color-primary-600);
+  --checkbox-checked-hover: var(--color-primary-700);
+  --switch-track-on: var(--color-primary-600);
+  --radio-checked: var(--color-primary-600);
+  --radio-checked-hover: var(--color-primary-700);
+}
+
+/**
+ * Earthy
+ * Olive and terracotta undertones, organic and grounded. Primary = Teal-Green (hue 175)
+ */
+[data-mood='earthy'] {
+  --mood-chroma-scale: 1;
+  --mood-warmth: 45;
+  --mood-hue-shift: -15;
+
+  /* Canvas background - warm yellow-brown tint */
+  --bg-primary: oklch(0.995 0.006 45);
+
+  /* Neutral palette - olive/terracotta undertones */
+  --color-stone-50: oklch(0.985 0.010 45);
+  --color-stone-100: oklch(0.970 0.015 45);
+  --color-stone-200: oklch(0.923 0.022 42);
+  --color-stone-300: oklch(0.865 0.030 40);
+  --color-stone-400: oklch(0.706 0.042 38);
+  --color-stone-500: oklch(0.553 0.042 35);
+  --color-stone-600: oklch(0.444 0.038 35);
+  --color-stone-700: oklch(0.374 0.035 35);
+  --color-stone-800: oklch(0.268 0.030 35);
+  --color-stone-900: oklch(0.216 0.026 35);
+  --color-stone-950: oklch(0.147 0.022 35);
+
+  /* Primary color = Teal-Green */
+  --color-primary-50: oklch(0.970 0.025 175);
+  --color-primary-100: oklch(0.940 0.050 175);
+  --color-primary-200: oklch(0.880 0.080 175);
+  --color-primary-300: oklch(0.790 0.110 175);
+  --color-primary-400: oklch(0.680 0.130 175);
+  --color-primary-500: oklch(0.600 0.150 175);
+  --color-primary-600: oklch(0.520 0.140 175);
+  --color-primary-700: oklch(0.450 0.130 175);
+  --color-primary-800: oklch(0.390 0.120 175);
+  --color-primary-900: oklch(0.330 0.100 175);
+
+  /* Component tokens - resolved in mood context */
+  --action-primary: var(--color-primary-600);
+  --action-primary-hover: var(--color-primary-700);
+  --action-primary-active: var(--color-primary-800);
+  --ring-color: var(--color-primary-500);
+  --border-focus: var(--color-primary-500);
+  --checkbox-checked-bg: var(--color-primary-600);
+  --checkbox-checked-hover: var(--color-primary-700);
+  --switch-track-on: var(--color-primary-600);
+  --radio-checked: var(--color-primary-600);
+  --radio-checked-hover: var(--color-primary-700);
+}
